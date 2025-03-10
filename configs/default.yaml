@@ -1,0 +1,26 @@
+﻿universe:
+  min_market_cap: 1e9
+  min_avg_volume: 1e6
+  sectors: ["Technology", "Healthcare", "Financials", "Consumer Discretionary"]
+  lookback_screening: 252
+cointegration:
+  method: "engle_granger"
+  significance: 0.05
+  min_half_life: 5
+  max_half_life: 120
+  rolling_window: 252
+  retest_frequency: 21
+signals:
+  entry_z: 2.0
+  exit_z: 0.5
+  stop_z: 3.5
+  lookback_zscore: 60
+execution:
+  max_pairs: 20
+  position_size: "half_kelly"
+  max_sector_exposure: 0.30
+  max_single_pair: 0.10
+risk:
+  max_portfolio_drawdown: 0.15
+  daily_var_limit: 0.02
+  correlation_threshold: 0.6
